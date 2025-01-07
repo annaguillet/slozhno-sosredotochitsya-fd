@@ -18,6 +18,7 @@
   margin-block-end: 40px;
   color: var(--text-light);
   background-color: var(--background-light);
+  height: 100vh;
 }
 
 .header::before,
@@ -292,6 +293,7 @@
 
   .footer {
     margin-block-start: 40px;
+    height: 100vh;
   }
 
   .footer__title {
