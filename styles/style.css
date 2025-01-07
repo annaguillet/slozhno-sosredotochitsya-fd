@@ -1,5 +1,324 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  width: 100%;
+  padding: 10px;
+  color: var(--text-color);
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-block-end: 40px;
+  color: var(--text-light);
+  background-color: var(--background-light);
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--content-title-color);
+}
+
+.header::before {
+  border-inline-start: none;
+  border-block-end: none;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+.header::after {
+  border-inline-end: none;
+  border-block-start: none;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu-list {
+  justify-content: flex-end;
+  margin-block-start: 20%;
+  text-align: end;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  margin-block-end: 10px;
+  border: none;
+  color: var(--content-title-color);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  background: none;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:not(:disabled):hover {
+  border: solid 1px var(--button-hover-outline);
+}
+.header__theme-menu-button:not(:disabled):focus {
+  border-bottom: solid 1px var(--content-title-color);
+  outline: none;
+}
+
+.header__theme-menu-button:disabled,
+.header__theme-menu-button_active {
+  outline: solid 1px var(--content-title-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.header__title {
+  margin-block: 16% 15%;
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__title span {
+  display: block;
+}
+
+.header__subtitle {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-block-end: 17%;
+  color: var(--content-subtitle-color);
+}
+
+.decorated-zone {
+  display: var(--apparence);
+  padding-top: 4px;
+  color: var(--accent-color);
+  text-align: end;
+}
+
+.decorated-zone::after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 0 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.content__title {
+  margin-block-end: 20px;
+  color: var(--content-title-color);
+}
+
+.content__subtitle {
+  margin-block-end: 10px;
+  color: var(--content-subtitle-color);
+}
+
+.content__subtitle-small {
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+  color: var(--content-subtitle-color);
+  font-weight: 400;
+}
+
+.content__paragraph {
+  margin-block-end: 20px;
+  font-size: 18px;
+}
+
+.content__paragraph:last-of-type {
+  margin-block-end: 50px;
+}
+
+.content-link {
+  border-block-end: solid 1px transparent;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--accent-color);
+}
+
+.content-link:hover {
+  border-block-end: solid 1px var(--text-color);
+}
+
+.content-link:focus-visible {
+  outline: solid 1px var(--text-color);
+  text-decoration: none;
+}
+
+.content__pictures {
+  width: 100%;
+  padding-block-end: 5px;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 647px;
+  margin-block-start: 40px;
+  color: var(--title-color);
+  background-color: var(--background-light);
+}
+
+.footer__title {
+  margin: 0;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--text-color);
+}
+
+.footer::before {
+  border-inline-start: none;
+  border-block-end: none;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+.footer::after {
+  border-inline-end: none;
+  border-block-start: none;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .header__title span {
+    display: inline;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__subtitle-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header__subtitle {
+    grid-area: 2/2;
+  }
+
+  .content-section-why,
+  .content-section-how,
+  .content-section-what {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    column-gap: 100px;
+  }
+
+  .content__title {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .content-section-why--text,
+  .content-section-how--text {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .content-section-what--text {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+
+  .content-section-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: dense;
+    gap: 10px;
+  }
+
+  .content__pictures {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  .content__pictures:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .content__pictures:nth-child(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .content__pictures:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .content__pictures:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+
+  .footer__title {
+    margin: 0;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+@media (min-width: 1024px) {
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 1%;
+    margin-block-end: 15%;
+  }
+
+  .content-section-what--text {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
+
+  .content-section-how {
+    column-gap: 75px;
+  }
+}
+
