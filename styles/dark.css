@@ -11,7 +11,6 @@
     --content-title-color:#ff0070;
     --content-subtitle-color:#000028;
     --text-color: #F1B2CE;
-    --main-font: "IBM Plex Mono", sans-serif;
     --bg-image: url('../images/cover-image-dark.png');
     --apparence: block;
     --button-hover-outline:rgba(255, 0, 112, 0.4);
@@ -28,7 +27,6 @@
       --content-title-color:#ff0070;
       --content-subtitle-color:#000028;
       --text-color: #F1B2CE;
-      --main-font: "IBM Plex Mono", sans-serif;
       --bg-image: url('../images/cover-image-dark.png');
       --apparence: block;
       --button-hover-outline:rgba(255, 0, 112, 0.4);
