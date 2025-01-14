@@ -243,10 +243,6 @@
     bottom: 20px;
   }
 
-  .content__title {
-    margin-top: 0px;
-  }
-
   .content-section-why,
   .content-section-how,
   .content-section-what {
@@ -259,6 +255,7 @@
 
   .content__title {
     grid-area: 1 / 1 / 2 / 2;
+    margin-top: 0px;
   }
 
   .content-section-why--text,
@@ -357,7 +354,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
-    grid-auto-flow: column;
+    grid-auto-flow:column;
     column-gap: 22px;
   }
 
