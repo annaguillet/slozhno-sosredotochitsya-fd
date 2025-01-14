@@ -55,10 +55,6 @@
   inset-inline-start: 0;
 }
 
-.header::after {
-  bottom: 10px;
-}
-
 .heading {
   font-weight: 700;
   font-size: 18px;
@@ -330,7 +326,6 @@
 @media (min-width: 1024px) {
   .header {
     align-items: start;
-    margin-bottom: 0;
     margin-bottom: 60px;
   }
 
@@ -360,10 +355,10 @@
 
   .content-section-what--text {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
     grid-auto-flow: column;
-    column-gap: 20px;
+    column-gap: 22px;
   }
 
   .content-section-how {
